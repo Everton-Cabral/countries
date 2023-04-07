@@ -1,24 +1,27 @@
 <template>
   <div class="app">
-    <TopBar />
+    <ContainerMain />
   </div>
   
 </template>
 
 <script>
-import TopBar from './components/TopBar.vue'
+
+import ContainerMain from './components/ContainerMain.vue'
 
 export default {
   name: 'App',
   components:{
-    TopBar,
+    ContainerMain,
   }
 
 }
 </script>
 
 <style>
-.app{
-  
+*{
+  margin: 0px;
+  padding: 0px;
 }
+
 </style>
