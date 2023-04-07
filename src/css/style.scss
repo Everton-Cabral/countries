@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+$font-main-source:'Nunito Sans', sans-serif;
+
+.display-flex{
+    display: flex;
+}
+@each $justify-content in (center, space-between){
+    .justify-content-#{$justify-content}{
+        justify-content: $justify-content;
+    }
+}
+@each $align-items in (center, flex-end){
+    .align-items-#{$align-items}{
+        align-items: $align-items;
+    }
+}
