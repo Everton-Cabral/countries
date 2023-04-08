@@ -10,7 +10,20 @@
                 <FilterRegion />
             </div>
         </div>
- 
+
+        <div class="c-containermain__countries"
+            v-for="country in countries" :key="country.name.common"
+        >
+      
+            <CountriesResult
+                :title="country.name.common"
+                :flag="country.flags.png"
+                :population="country.population"
+                :region="country.region"
+                :capital="country.capital"
+            />
+        </div>
+
     </div>
 </template>
 
@@ -18,6 +31,7 @@
 import TopBar from './TopBar.vue'
 import SearchCountry from './SearchCountry.vue'
 import FilterRegion from './FilterRegion.vue'
+import CountriesResult from './CountriesResult.vue'
 import { mapState } from 'vuex'
 export default {
     name:'ContainerMain',
@@ -26,11 +40,13 @@ export default {
     TopBar,
     SearchCountry,
     FilterRegion,
+    CountriesResult,
     },
 
     computed:{
         ...mapState([
-            'darkmode'
+            'darkmode',
+            'countries'
         ]),
         darkmodeclass(){
             return this.darkmode ? 'c-containermain--darkmode' : ''

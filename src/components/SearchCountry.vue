@@ -10,26 +10,46 @@
             class="c-searchcountry__input" 
             :class="darkmodeinput" 
             placeholder="Seach for a country..."
+            @keyup.enter="searchcountry"
+            v-model="text"
         >
     </div>
    
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapMutations, mapActions } from 'vuex';
 export default {
     name:'SearchCountry',
-computed:{
-    ...mapState([
-        'darkmode'
-    ]),
-    darkmodeinput(){
-        return this.darkmode ? 'c-searchcountry__input--darkmode' : ''
+
+    data(){
+        return{
+            text:''
+        }
     },
-    darkmodeicon(){
-        return this.darkmode ? 'c-searchcountry__icon--darkmode' : '' 
+    methods:{
+        ...mapMutations([
+            'sendtext'
+        ]),
+        ...mapActions([
+            'getCountries'
+        ]),
+        searchcountry(){
+            this.sendtext(this.text)
+            this.getCountries()
+        }
+    },
+    computed:{
+        ...mapState([
+            'darkmode'
+        ]),
+        darkmodeinput(){
+            return this.darkmode ? 'c-searchcountry__input--darkmode' : ''
+        },
+        darkmodeicon(){
+            return this.darkmode ? 'c-searchcountry__icon--darkmode' : '' 
+        }
     }
-}
 }
 </script>
 
