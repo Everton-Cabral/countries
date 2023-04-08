@@ -5,7 +5,7 @@ $background-color-white-container:hsl(0, 0%, 98%);
 .display-flex{
     display: flex;
 }
-@each $justify-content in (center, space-between){
+@each $justify-content in (center, flex-start, space-between){
     .justify-content-#{$justify-content}{
         justify-content: $justify-content;
     }

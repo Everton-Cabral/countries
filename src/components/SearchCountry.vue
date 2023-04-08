@@ -15,6 +15,7 @@ export default {
 <style lang="scss" scoped>
  .c-searchcountry{
 
+
     &__icon{
         position: absolute;
         margin-left: 20px;
@@ -22,7 +23,8 @@ export default {
     &__input{
         border: none;
         height: 45px;
-        width: 350px;
+        width: 100%;
+        max-width: 370px;
         font-size: 16px;
         border-radius: 5px;
         box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
