@@ -22,20 +22,20 @@ import { mapState } from 'vuex'
 export default {
     name:'ContainerMain',
 
-components:{
+    components:{
     TopBar,
     SearchCountry,
     FilterRegion,
-},
+    },
 
-computed:{
-    ...mapState([
-        'darkmode'
-    ]),
-    darkmodeclass(){
-        return this.darkmode ? 'c-containermain--darkmode' : ''
+    computed:{
+        ...mapState([
+            'darkmode'
+        ]),
+        darkmodeclass(){
+            return this.darkmode ? 'c-containermain--darkmode' : ''
+        }
     }
-}
 }
 </script>
 

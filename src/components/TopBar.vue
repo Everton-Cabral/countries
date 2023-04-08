@@ -1,8 +1,9 @@
 <template>
-    <div class="c-topbar">
+    <div class="c-topbar"
+        :class="darkmodeclass"
+    >
         <h1 class="c-topbar__titulo">Where in the world?</h1>
-        {{ $store.state.darkmode }}
-
+    
         <span class="c-topbar__mode"
             @click="changemode"
         >
@@ -13,7 +14,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 export default {
     name:'TopBar',
 
@@ -23,6 +24,14 @@ export default {
         ]),
         changemode(){
             this.changemodedark()
+        }
+    },
+    computed:{
+        ...mapState([
+            'darkmode'
+        ]),
+        darkmodeclass(){
+            return this.darkmode ? 'c-topbar--darkmode' : ''
         }
     }
 }
@@ -48,7 +57,10 @@ export default {
     &__mode{
         font-weight: 600;
     }
-    
+}
+.c-topbar--darkmode{
+    background-color: $background-color-dark-element;
+    color: white;
 }
 @media screen and (min-width: 800px) {
     .c-topbar{
