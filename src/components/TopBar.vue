@@ -1,7 +1,8 @@
 <template>
     <div class="c-topbar">
         <h1 class="c-topbar__titulo">Where in the world?</h1>
-        
+        {{ $store.state.darkmode }}
+
         <span class="c-topbar__mode"
             @click="changemode"
         >

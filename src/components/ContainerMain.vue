@@ -1,5 +1,5 @@
 <template>
-    <div class="c-containermain">
+    <div class="c-containermain" :class="darkmodeclass">
         <TopBar />
         <div class="c-containermain__searchbar">
             <div class="c-containermain__searchbar__searchcountry">
@@ -9,7 +9,6 @@
             <div class="c-containermain__searchbar__filterregion">
                 <FilterRegion />
             </div>
-            
         </div>
  
     </div>
@@ -19,13 +18,24 @@
 import TopBar from './TopBar.vue'
 import SearchCountry from './SearchCountry.vue'
 import FilterRegion from './FilterRegion.vue'
+import { mapState } from 'vuex'
 export default {
     name:'ContainerMain',
-    components:{
+
+components:{
     TopBar,
     SearchCountry,
     FilterRegion,
+},
+
+computed:{
+    ...mapState([
+        'darkmode'
+    ]),
+    darkmodeclass(){
+        return this.darkmode ? 'c-containermain--darkmode' : ''
     }
+}
 }
 </script>
 
@@ -67,6 +77,9 @@ export default {
         }
      }
 
+}
+.c-containermain--darkmode{
+    background-color: $background-color-dark;
 }
 
 </style>

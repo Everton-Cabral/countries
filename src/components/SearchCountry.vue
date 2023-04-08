@@ -1,24 +1,55 @@
 <template>
     <div class="c-searchcountry">
-        <ion-icon class="c-searchcountry__icon" name="search"></ion-icon>
-        <input type="text" class="c-searchcountry__input" placeholder="Seach for a country...">
+        <ion-icon class="c-searchcountry__icon" 
+            :class="darkmodeicon"
+            name="search"
+        >
+        </ion-icon>
+
+        <input type="text" 
+            class="c-searchcountry__input" 
+            :class="darkmodeinput" 
+            placeholder="Seach for a country..."
+        >
     </div>
    
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
     name:'SearchCountry',
+computed:{
+    ...mapState([
+        'darkmode'
+    ]),
+    darkmodeinput(){
+        return this.darkmode ? 'c-searchcountry__input--darkmode' : ''
+    },
+    darkmodeicon(){
+        return this.darkmode ? 'c-searchcountry__icon--darkmode' : '' 
+    }
+}
 }
 </script>
 
 <style lang="scss" scoped>
- .c-searchcountry{
+@import '../css/style.scss';
 
+ .c-searchcountry{
+   
 
     &__icon{
         position: absolute;
-        margin-left: 20px;
+        font-size: 25px;
+        margin-top: 10px;
+        margin-left: 10px;
+        color: hsl(0, 0%, 52%);
+        visibility: visible;
+    }
+    &__icon--darkmode{
+        color: white;
+        visibility: visible;
     }
     &__input{
         border: none;
@@ -35,11 +66,14 @@ export default {
     &__input::placeholder{
         color: hsl(0, 0%, 52%);
     }
-    &__icon{
-        font-size: 25px;
-        margin-top: 10px;
-        margin-left: 10px;
-        color: hsl(0, 0%, 52%);
+    &__input--darkmode{
+        background-color: $background-color-dark-element;
+        color: white;
     }
+    &__input--darkmode::placeholder{
+        color: white;
+    }
+   
+    
  }
 </style>
