@@ -5,14 +5,12 @@
             <ion-icon name="moon-outline"></ion-icon>
             Dark Mode
         </span>
-
     </div>
 </template>
 
 <script>
 export default {
     name:'TopBar',
-
 }
 </script>
 
