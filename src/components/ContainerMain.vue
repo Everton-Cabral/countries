@@ -9,7 +9,7 @@
             <div class="c-containermain__searchbar__filterregion">
                 <FilterRegion />
             </div>
-
+            
         </div>
  
     </div>
@@ -34,9 +34,6 @@ export default {
 .c-containermain{
     background-color: $background-color-white-container;
     height: 100vh;   
-   
-
-  
 
     &__searchbar{
        padding: 0px 5% 0 5%;
@@ -49,7 +46,7 @@ export default {
 
         &__searchcountry{
             padding-top: 30px;
-            width: 370px;      
+            width: 390px;      
         }
         &__filterregion{
             margin-right: auto;

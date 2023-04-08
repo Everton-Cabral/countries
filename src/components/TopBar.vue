@@ -1,7 +1,10 @@
 <template>
     <div class="c-topbar">
         <h1 class="c-topbar__titulo">Where in the world?</h1>
-        <span class="c-topbar__mode">
+        
+        <span class="c-topbar__mode"
+            @click="changemode"
+        >
             <ion-icon name="moon-outline"></ion-icon>
             Dark Mode
         </span>
@@ -9,8 +12,18 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 export default {
     name:'TopBar',
+
+    methods:{
+        ...mapMutations([
+            'changemodedark'
+        ]),
+        changemode(){
+            this.changemodedark()
+        }
+    }
 }
 </script>
 
@@ -41,6 +54,9 @@ export default {
 
         &__titulo{
             font-size: 1.5em;
+        }
+        &__mode:hover{
+            cursor: pointer;
         }
     }
 }

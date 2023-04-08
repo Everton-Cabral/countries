@@ -1,0 +1,23 @@
+[33mcommit e495d5b8c2cef80eacadd2e6a44e2620f57b1e87[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Everton Cabral <90525060+Everton-Cabral@users.noreply.github.com>
+Date:   Fri Apr 7 12:09:07 2023 -0300
+
+    Criando o componente container e aplicando o componente topbar
+
+[33mcommit f4e9434120ff0663bc679d1bfa6808a1393c5d66[m
+Author: Everton Cabral <90525060+Everton-Cabral@users.noreply.github.com>
+Date:   Fri Apr 7 11:08:51 2023 -0300
+
+    Posicionando os elementos do componente topbar
+
+[33mcommit fb12f9604d56948e3cc0a90e0763495406dbf3fa[m
+Author: Everton Cabral <90525060+Everton-Cabral@users.noreply.github.com>
+Date:   Fri Apr 7 10:16:27 2023 -0300
+
+    Inicializando o projeto e criando o componente TopBar
+
+[33mcommit d5bb749205e86ea8126681cee70134005ec5e2ae[m
+Author: Everton Cabral <90525060+Everton-Cabral@users.noreply.github.com>
+Date:   Fri Apr 7 08:29:41 2023 -0300
+
+    init

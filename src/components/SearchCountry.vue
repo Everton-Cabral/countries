@@ -24,11 +24,11 @@ export default {
         border: none;
         height: 45px;
         width: 100%;
-        max-width: 370px;
+        max-width: 390px;
         font-size: 16px;
         border-radius: 5px;
         box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-        padding-left: 40px;
+        padding-left: 50px;
         box-sizing: border-box;
         color: hsl(0, 0%, 52%);
     }
