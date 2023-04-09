@@ -10,20 +10,19 @@
                 <FilterRegion />
             </div>
         </div>
-
-        <div class="c-containermain__countries"
-            v-for="country in countries" :key="country.name.common"
-        >
-      
-            <CountriesResult
-                :title="country.name.common"
-                :flag="country.flags.png"
-                :population="country.population"
-                :region="country.region"
-                :capital="country.capital"
-            />
+        <div class="c-containermain__containercountries">
+            <div class="c-containermain__containercountries__countries"
+                v-for="country in countries" :key="country.name.common"
+            >
+                <CountriesResult
+                    :title="country.name.common"
+                    :flag="country.flags.png"
+                    :population="country.population"
+                    :region="country.region"
+                    :capital="country.capital"
+                />
+            </div>
         </div>
-
     </div>
 </template>
 
@@ -77,6 +76,16 @@ export default {
         &__filterregion{
             margin-right: auto;
             padding-top: 30px;
+        }
+    }
+    &__containercountries{
+        @extend .display-flex;
+        flex-wrap: wrap;
+        @extend .justify-content-center;
+        width: 100%;
+        
+        &__countries{
+            padding: 30px;
         }
     }
     @media screen and (min-width: 584px) {
