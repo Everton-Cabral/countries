@@ -58,7 +58,8 @@ export default {
 @import '../css/style.scss';
 .c-containermain{
     background-color: $background-color-white-container;
-    height: 100vh;   
+    min-height: 100vh;
+    height: auto;  
 
     &__searchbar{
        padding: 0px 5% 0 5%;

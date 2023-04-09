@@ -1,5 +1,5 @@
 <template>
-    <div class="c-countriesresult">
+    <div class="c-countriesresult" :class="darkmodeclass">
         <div class="c-countriesresult__image">
             <img :src="flag" alt="flag">
         </div>
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
     name:'CountriesResult',
 
@@ -39,6 +40,12 @@ export default {
         },
     },
     computed:{
+        ...mapState([
+            'darkmode',
+        ]),
+        darkmodeclass(){
+            return this.darkmode ? 'c-countriesresult--darkmode' : ''
+        },
         Capital(){
            return this.capital ? this.capital[0] : 'Desconhecido'
         }
@@ -78,6 +85,10 @@ export default {
         }
     }
 
+}
+.c-countriesresult--darkmode{
+    background-color: $background-color-dark-element;
+    color: white;
 }
 
 
