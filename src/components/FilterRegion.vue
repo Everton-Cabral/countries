@@ -6,11 +6,12 @@
             v-model="selectedregion"
         >
             <option  disabled selected hidden>Filter by Region</option>
-            <option value="africa">Africa</option>
-            <option value="america">América</option>
-            <option value="asia">Asia</option>
-            <option value="europe">Europe</option>
-            <option value="oceania">Oceania</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+            <option value="allregions">All Regions</option>
         </select>
 </template>
 
@@ -32,14 +33,14 @@ export default {
         darkmodeclass(){
             return this.darkmode ? 'c-filterregion--darkmode' : ''
         },
-    selectedregion:{
-        get(){
-            return this.regionfilter
-        },
-        set(value){
-            this.sendregionfilter(value)
+        selectedregion:{
+            get(){
+                return this.regionfilter === 'allregions' ?'Filter by Region' : this.regionfilter  
+            },
+            set(value){
+                this.sendregionfilter(value)
+            }
         }
-    }
 
     }
 }

@@ -5,7 +5,7 @@ export const store = createStore({
             darkmode:false,
             searchtext: '',
             countries:[],
-            regionfilter:'Filter by Region'
+            regionfilter:'allregions'
         }
     },
     mutations:{

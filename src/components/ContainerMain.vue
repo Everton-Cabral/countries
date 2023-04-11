@@ -13,6 +13,7 @@
         <div class="c-containermain__containercountries">
             <div class="c-containermain__containercountries__countries"
                 v-for="country in countries" :key="country.name.common"
+                v-show="showcountry || regionfilter === country.region"
             >
                 <CountriesResult
                     :title="country.name.common"
@@ -22,7 +23,6 @@
                     :capital="country.capital"
                 />
             </div>
-            {{ $store.state.regionfilter }}
         </div>
     </div>
 </template>
@@ -46,10 +46,14 @@ export default {
     computed:{
         ...mapState([
             'darkmode',
-            'countries'
+            'countries',
+            'regionfilter'
         ]),
         darkmodeclass(){
             return this.darkmode ? 'c-containermain--darkmode' : ''
+        },
+        showcountry(){
+            return this.regionfilter === 'allregions' ? true : false  
         }
     }
 }
