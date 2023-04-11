@@ -5,6 +5,7 @@ export const store = createStore({
             darkmode:false,
             searchtext: '',
             countries:[],
+            regionfilter:'Filter by Region'
         }
     },
     mutations:{
@@ -16,11 +17,14 @@ export const store = createStore({
         },
         sendcountries(state, params){
             state.countries = params
+        },
+        sendregionfilter(state, params){
+            state.regionfilter = params
         }
     },
     actions:{
         getCountries({ commit, state}){
-            return fetch(`https://restcountries.com/v3.1/name/${state.searchtext}`)
+            return fetch(`https://restcountries.com/v3.1/name/${state.searchtext}?fields=name,population,flags,capital,region`)
                 .then(response => response.json())
                 .then( data => {commit('sendcountries', data), console.log(data)})
                 

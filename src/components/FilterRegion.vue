@@ -3,29 +3,45 @@
             class="c-filterregion" 
             :class="darkmodeclass"
             name="filterregion"
+            v-model="selectedregion"
         >
             <option  disabled selected hidden>Filter by Region</option>
-            <option value="opcao1">Africa</option>
-            <option value="opcao2">América</option>
-            <option value="opcao3">Asia</option>
-            <option value="opcao3">Europe</option>
-            <option value="opcao3">Oceania</option>
+            <option value="africa">Africa</option>
+            <option value="america">América</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="oceania">Oceania</option>
         </select>
-    
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
     name:'FilterRegion',
-computed:{
-    ...mapState([
-        'darkmode'
-    ]),
-    darkmodeclass(){
-        return this.darkmode ? 'c-filterregion--darkmode' : ''
+
+    methods:{
+        ...mapMutations([
+            'sendregionfilter',
+        ]),
+    },
+    computed:{
+        ...mapState([
+            'darkmode',
+            'regionfilter'
+        ]),
+        darkmodeclass(){
+            return this.darkmode ? 'c-filterregion--darkmode' : ''
+        },
+    selectedregion:{
+        get(){
+            return this.regionfilter
+        },
+        set(value){
+            this.sendregionfilter(value)
+        }
     }
-}
+
+    }
 }
 </script>
 

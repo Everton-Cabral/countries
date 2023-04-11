@@ -22,6 +22,7 @@
                     :capital="country.capital"
                 />
             </div>
+            {{ $store.state.regionfilter }}
         </div>
     </div>
 </template>

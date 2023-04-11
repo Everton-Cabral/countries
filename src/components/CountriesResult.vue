@@ -47,7 +47,7 @@ export default {
             return this.darkmode ? 'c-countriesresult--darkmode' : ''
         },
         Capital(){
-           return this.capital ? this.capital[0] : 'Desconhecido'
+           return this.capital  ? this.capital[0] : 'Desconhecidoasd'
         }
     }
 }
