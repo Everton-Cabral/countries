@@ -14,7 +14,6 @@ export default {
   components:{
     ContainerMain,
   }
-
 }
 </script>
 
@@ -22,6 +21,8 @@ export default {
 *{
   margin: 0px;
   padding: 0px;
+  
 }
+
 
 </style>

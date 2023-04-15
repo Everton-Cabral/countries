@@ -5,7 +5,7 @@
         </div>
         <div class="c-countriesresult__info">
             <h2>{{ title }}</h2>
-            <span><strong>Population:</strong>  {{ population }}</span>
+            <span><strong>Population:</strong>  {{ Population }}</span>
             <span><strong>Region:</strong> {{ region }}</span>
             <span><strong>Capital:</strong> {{ Capital }}</span>
         </div>
@@ -48,6 +48,9 @@ export default {
         },
         Capital(){
            return this.capital  ? this.capital[0] : 'Desconhecidoasd'
+        },
+        Population(){
+            return this.population.toLocaleString()
         }
     }
 }

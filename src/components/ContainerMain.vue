@@ -10,20 +10,9 @@
                 <FilterRegion />
             </div>
         </div>
-        <div class="c-containermain__containercountries">
-            <div class="c-containermain__containercountries__countries"
-                v-for="country in countries" :key="country.name.common"
-                v-show="showcountry || regionfilter === country.region"
-            >
-                <CountriesResult
-                    :title="country.name.common"
-                    :flag="country.flags.png"
-                    :population="country.population"
-                    :region="country.region"
-                    :capital="country.capital"
-                />
-            </div>
-        </div>
+        
+           <ContainerCountries />
+        
     </div>
 </template>
 
@@ -31,7 +20,8 @@
 import TopBar from './TopBar.vue'
 import SearchCountry from './SearchCountry.vue'
 import FilterRegion from './FilterRegion.vue'
-import CountriesResult from './CountriesResult.vue'
+import ContainerCountries from './ContainerCountries.vue'
+
 import { mapState } from 'vuex'
 export default {
     name:'ContainerMain',
@@ -40,21 +30,16 @@ export default {
     TopBar,
     SearchCountry,
     FilterRegion,
-    CountriesResult,
+    ContainerCountries,
     },
 
     computed:{
         ...mapState([
             'darkmode',
-            'countries',
-            'regionfilter'
         ]),
         darkmodeclass(){
             return this.darkmode ? 'c-containermain--darkmode' : ''
         },
-        showcountry(){
-            return this.regionfilter === 'allregions' ? true : false  
-        }
     }
 }
 </script>
@@ -73,8 +58,6 @@ export default {
         flex-wrap: wrap;
         align-items: baseline;
 
-        
-
         &__searchcountry{
             padding-top: 30px;
             width: 390px;      
@@ -84,16 +67,7 @@ export default {
             padding-top: 30px;
         }
     }
-    &__containercountries{
-        @extend .display-flex;
-        flex-wrap: wrap;
-        @extend .justify-content-center;
-        width: 100%;
-        
-        &__countries{
-            padding: 30px;
-        }
-    }
+   
     @media screen and (min-width: 584px) {
        
         .c-containermain{
@@ -107,7 +81,6 @@ export default {
             }
         }
      }
-
 }
 .c-containermain--darkmode{
     background-color: $background-color-dark;

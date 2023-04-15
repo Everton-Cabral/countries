@@ -3,6 +3,7 @@
         <ion-icon class="c-searchcountry__icon" 
             :class="darkmodeicon"
             name="search"
+            @click="searchcountry"
         >
         </ion-icon>
 
@@ -70,6 +71,9 @@ export default {
     &__icon--darkmode{
         color: white;
         visibility: visible;
+    }
+    &__icon:hover{
+        cursor: pointer;
     }
     &__input{
         border: none;

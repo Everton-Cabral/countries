@@ -26,9 +26,7 @@ export const store = createStore({
         getCountries({ commit, state}){
             return fetch(`https://restcountries.com/v3.1/name/${state.searchtext}?fields=name,population,flags,capital,region`)
                 .then(response => response.json())
-                .then( data => {commit('sendcountries', data), console.log(data)})
-                
-               
+                .then( data => {commit('sendcountries', data), console.log(data)})       
         }
     }
 })
