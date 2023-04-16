@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ContainerCountries from './components/ContainerCountries.vue'
+import DetailsCountry from './components/DetailsCountry.vue'
 
 const routes = [
     {
@@ -9,8 +10,8 @@ const routes = [
       },
       {
         path: '/details',
-        name: 'about',
-        component: About
+        name: 'details',
+        component: DetailsCountry
       }
 ]
 

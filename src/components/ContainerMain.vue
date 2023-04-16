@@ -11,7 +11,7 @@
             </div>
         </div>
         
-           <ContainerCountries />
+          <router-view></router-view>
         
     </div>
 </template>
@@ -20,8 +20,6 @@
 import TopBar from './TopBar.vue'
 import SearchCountry from './SearchCountry.vue'
 import FilterRegion from './FilterRegion.vue'
-import ContainerCountries from './ContainerCountries.vue'
-
 import { mapState } from 'vuex'
 export default {
     name:'ContainerMain',
@@ -30,7 +28,6 @@ export default {
     TopBar,
     SearchCountry,
     FilterRegion,
-    ContainerCountries,
     },
 
     computed:{

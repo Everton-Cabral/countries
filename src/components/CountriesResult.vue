@@ -87,7 +87,9 @@ export default {
             margin-bottom: 10px;
         }
     }
-
+}
+.c-countriesresult:hover{
+    cursor: pointer;
 }
 .c-countriesresult--darkmode{
     background-color: $background-color-dark-element;

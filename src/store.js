@@ -5,7 +5,8 @@ export const store = createStore({
             darkmode:false,
             searchtext: '',
             countries:[],
-            regionfilter:'allregions'
+            regionfilter:'allregions',
+            countrydetail:[],
         }
     },
     mutations:{
@@ -20,6 +21,9 @@ export const store = createStore({
         },
         sendregionfilter(state, params){
             state.regionfilter = params
+        },
+        sendcountrydetail(state, params){
+            state.countrydetail = params
         }
     },
     actions:{
@@ -27,6 +31,14 @@ export const store = createStore({
             return fetch(`https://restcountries.com/v3.1/name/${state.searchtext}?fields=name,population,flags,capital,region`)
                 .then(response => response.json())
                 .then( data => {commit('sendcountries', data), console.log(data)})       
+        },
+        getCountry({ commit }, params){
+            console.log(params)
+            return fetch(`https://restcountries.com/v3.1/name/${params}?fields=name,population,flags,capital,region,subregion,currencies,languages,borders
+
+            `)
+            .then(response => response.json())
+            .then( data => {commit('sendcountrydetail', data), console.log(data)}) 
         }
     }
 })
