@@ -1,33 +1,19 @@
 <template>
     <div class="c-containermain" :class="darkmodeclass">
         <TopBar />
-        <div class="c-containermain__searchbar">
-            <div class="c-containermain__searchbar__searchcountry">
-                <SearchCountry />
-            </div>
-
-            <div class="c-containermain__searchbar__filterregion">
-                <FilterRegion />
-            </div>
-        </div>
-        
-          <router-view></router-view>
+        <router-view></router-view>
         
     </div>
 </template>
 
 <script>
 import TopBar from './TopBar.vue'
-import SearchCountry from './SearchCountry.vue'
-import FilterRegion from './FilterRegion.vue'
 import { mapState } from 'vuex'
 export default {
     name:'ContainerMain',
 
     components:{
     TopBar,
-    SearchCountry,
-    FilterRegion,
     },
 
     computed:{
@@ -48,22 +34,6 @@ export default {
     min-height: 100vh;
     height: auto;  
 
-    &__searchbar{
-       padding: 0px 5% 0 5%;
-        @extend .display-flex;
-        @extend .justify-content-center;
-        flex-wrap: wrap;
-        align-items: baseline;
-
-        &__searchcountry{
-            padding-top: 30px;
-            width: 390px;      
-        }
-        &__filterregion{
-            margin-right: auto;
-            padding-top: 30px;
-        }
-    }
    
     @media screen and (min-width: 584px) {
        
